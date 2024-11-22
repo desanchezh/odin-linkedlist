@@ -10,10 +10,19 @@ class LinkedList
   def append(value)
     node = Node.new
     node.value = value
-    @list.push(node.value)
+    @list.push(node)
+    # should update @next node of previous node?
+  end
+
+  def prepend(value)
+    node = Node.new
+    node.value = value
+    @list.unshift(node)
+    # should update @next node of self?
   end
 end
 
 list = LinkedList.new
 list.append("test")
-p list.list
+list.prepend("prepend test")
+p list.list[0].value

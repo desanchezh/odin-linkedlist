@@ -24,9 +24,21 @@ class LinkedList
   def size
     @list.size
   end
+
+  def head
+    @list[0]
+  end
+
+  def tail
+    @list[-1]
+  end
+
+  def at(index)
+    @list[index]
+  end
 end
 
 list = LinkedList.new
 list.append("test")
 list.prepend("prepend test")
-p list.size
+p list.tail

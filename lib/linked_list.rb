@@ -20,9 +20,13 @@ class LinkedList
     @list.unshift(node)
     # should update @next node of self?
   end
+
+  def size
+    @list.size
+  end
 end
 
 list = LinkedList.new
 list.append("test")
 list.prepend("prepend test")
-p list.list[0].value
+p list.size

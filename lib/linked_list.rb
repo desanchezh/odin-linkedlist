@@ -39,6 +39,14 @@ class LinkedList
     end
     count
   end
+
+  def at(index)
+    current = head
+    index.times do
+      current = current.next_node
+    end
+    current
+  end
 end
 
 list = LinkedList.new
@@ -46,5 +54,4 @@ list.append("test")
 list.append("second")
 list.append("third")
 list.prepend("prepend test")
-next_node_var = list.head.next_node
-p list.size
+p list.at(3)

@@ -63,6 +63,18 @@ class LinkedList
     end
     false
   end
+
+  def find(value)
+    current = @head
+    count = 0
+    until current.nil?
+      return count if current.value == value
+
+      count += 1
+      current = current.next_node
+    end
+    nil
+  end
 end
 
 list = LinkedList.new
@@ -70,5 +82,3 @@ list.append("test")
 list.append("second")
 list.append("third")
 list.prepend("prepend test")
-
-p list.contains?("second")

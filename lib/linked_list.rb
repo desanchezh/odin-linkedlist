@@ -29,6 +29,16 @@ class LinkedList
       @head = node
     end
   end
+
+  def size
+    current = @head
+    count = 0
+    until current.nil?
+      count += 1
+      current = current.next_node
+    end
+    count
+  end
 end
 
 list = LinkedList.new
@@ -36,4 +46,5 @@ list.append("test")
 list.append("second")
 list.append("third")
 list.prepend("prepend test")
-p list.head.next_node
+next_node_var = list.head.next_node
+p list.size

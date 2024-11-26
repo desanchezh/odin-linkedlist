@@ -75,6 +75,17 @@ class LinkedList
     end
     nil
   end
+
+  def to_s
+    current = @head
+    string_display = ""
+    size.times do
+      string_display << "( #{current.value} ) -> "
+      current = current.next_node
+    end
+    string_display << "nil"
+    string_display
+  end
 end
 
 list = LinkedList.new
@@ -82,3 +93,4 @@ list.append("test")
 list.append("second")
 list.append("third")
 list.prepend("prepend test")
+list.append("fourth")

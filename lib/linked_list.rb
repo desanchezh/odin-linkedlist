@@ -2,48 +2,26 @@ require_relative "node"
 
 class LinkedList
   def initialize
-    @list = []
+    @head = nil
+    @tail = nil
   end
 
-  attr_accessor :list
+  attr_accessor :head, :tail
 
   def append(value)
-    node = Node.new
-    node.value = value
-    node.next_node = @list.size + 1
-    @list.push(node)
-    # should update @next node of previous node?
-  end
-
-  def prepend(value)
-    node = Node.new
-    node.value = value
-    @list.unshift(node)
-    # should update @next node of self?
-  end
-
-  def size
-    @list.size
-  end
-
-  def head
-    @list[0]
-  end
-
-  def tail
-    @list[-1]
-  end
-
-  def at(index)
-    @list[index]
-  end
-
-  def pop
-    @list.pop
+    node = Node.new(value)
+    if @head.nil?
+      @head = node
+      @tail = node
+    else
+      @tail.next_node = node
+      @tail = node
+    end
   end
 end
 
 list = LinkedList.new
 list.append("test")
-list.prepend("prepend test")
+list.append("second")
+list.append("third")
 p list

@@ -47,6 +47,12 @@ class LinkedList
     end
     current
   end
+
+  def pop
+    tail_index = size - 1
+    @tail = at(tail_index - 1)
+    @tail.next_node = nil
+  end
 end
 
 list = LinkedList.new
@@ -54,4 +60,6 @@ list.append("test")
 list.append("second")
 list.append("third")
 list.prepend("prepend test")
-p list.at(3)
+p list
+list.pop
+p list

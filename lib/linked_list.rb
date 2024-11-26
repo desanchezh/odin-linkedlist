@@ -87,10 +87,3 @@ class LinkedList
     string_display
   end
 end
-
-list = LinkedList.new
-list.append("test")
-list.append("second")
-list.append("third")
-list.prepend("prepend test")
-list.append("fourth")

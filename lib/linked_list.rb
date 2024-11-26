@@ -18,10 +18,22 @@ class LinkedList
       @tail = node
     end
   end
+
+  def prepend(value)
+    node = Node.new(value)
+    if @head.nil?
+      @head = node
+      @tail = node
+    else
+      node.next_node = @head
+      @head = node
+    end
+  end
 end
 
 list = LinkedList.new
 list.append("test")
 list.append("second")
 list.append("third")
-p list
+list.prepend("prepend test")
+p list.head.next_node
